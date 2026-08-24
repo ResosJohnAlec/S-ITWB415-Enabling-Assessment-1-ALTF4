@@ -230,62 +230,6 @@ body {
   box-shadow: 0 10px 25px rgba(127, 129, 255, 0.25);
 }
 
-.testimonials {
-  width: 80%;
-  margin: auto auto 5px;
-  padding: 20px;
-}
-
-.testimonials h2 {
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.testimonial-card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.message-1,
-.message-2,
-.message-3,
-.message-4 {
-  color: #ffffff;
-  background-color: #101744;
-  border: 1px solid #34376b;
-  border-radius: 15px;
-  padding: 20px;
-  transition: 0.3s ease;
-}
-
-.message-1:hover,
-.message-2:hover,
-.message-3:hover,
-.message-4:hover {
-  transform: translateY(-5px);
-  border: 1px solid #7f81ff;
-  box-shadow: 0 10px 25px rgba(127, 129, 255, 0.25);
-}
-
-.testimonial-card i {
-  color: #2bd887;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.testimonials h3 {
-  font-size: 16px;
-  color: #7f81ff;
-  margin-bottom: 10px;
-}
-
-.testimonials p {
-  color: #b8b9d9;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
 .fa-diagram-project {
   color: #2bd887;
 }
