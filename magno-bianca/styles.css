@@ -32,32 +32,28 @@ body {
 
 .layout {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    align-items: stretch;
 }
 
 .sidebar {
-    width: 300px;
-    flex-shrink: 0;
+    width: 100%;
     background: var(--pink-dark);
     color: white;
-    padding: 40px 30px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    position: sticky;
-    top: 0;
-    height: 100vh;
 }
 
 .avatar {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--pink-light);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .avatar img {
@@ -68,7 +64,7 @@ body {
 
 .sidebar h1 {
     font-family: 'Fraunces', serif;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 6px;
 }
 
@@ -76,15 +72,15 @@ body {
     color: var(--pink-light);
     font-size: 13px;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .side-nav {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     width: 100%;
-    margin-bottom: auto;
+    margin-bottom: 20px;
 }
 
 .side-nav a {
@@ -97,17 +93,16 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .side-nav a:hover {
-    background: rgba(255,255,255,0.18);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .socials {
     display: flex;
     gap: 14px;
-    margin-top: 30px;
 }
 
 .socials a {
@@ -116,7 +111,7 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,15 +122,13 @@ body {
     color: var(--pink-dark);
 }
 
-
 .content {
     flex: 1;
-    padding: 60px 60px 40px;
-    max-width: 800px;
+    padding: 40px 20px;
 }
 
 .block {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .tag {
@@ -153,44 +146,42 @@ body {
 
 .block h2 {
     font-family: 'Fraunces', serif;
-    font-size: 32px;
+    font-size: 26px;
     color: var(--text);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .block p {
     color: var(--muted);
     font-size: 15px;
     line-height: 1.7;
-    max-width: 600px;
 }
-
 
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .project-item {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     background: white;
     border: 1px solid var(--pink-light);
     border-radius: 14px;
-    padding: 24px;
+    padding: 20px;
 }
 
 .project-item .num {
     font-family: 'Fraunces', serif;
-    font-size: 26px;
+    font-size: 22px;
     color: var(--pink-light);
     font-weight: 700;
     flex-shrink: 0;
 }
 
 .project-item h3 {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--text);
     margin-bottom: 4px;
 }
@@ -203,7 +194,7 @@ body {
 }
 
 .skill-row {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .skill-label {
@@ -243,17 +234,85 @@ footer {
     padding-top: 20px;
     border-top: 1px solid var(--pink-light);
 }
-@media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 30px 20px;
-    }
+
+/* Mobile S */
+@media (min-width: 321px) {
     .content {
         padding: 40px 25px;
+    }
+}
+
+/* Mobile L / Tablet */
+@media (min-width: 426px) {
+    .content {
+        padding: 50px 40px;
+    }
+
+    .block h2 {
+        font-size: 30px;
+    }
+}
+
+/* Laptop and above: switch to sidebar layout */
+@media (min-width: 769px) {
+    .layout {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 300px;
+        flex-shrink: 0;
+        padding: 40px 30px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    .avatar {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 20px;
+    }
+
+    .sidebar h1 {
+        font-size: 22px;
+    }
+
+    .sidebar .role {
+        margin-bottom: 30px;
+    }
+
+    .side-nav {
+        margin-bottom: auto;
+    }
+
+    .socials {
+        margin-top: 30px;
+    }
+
+    .content {
+        padding: 60px 60px 40px;
+        max-width: 800px;
+    }
+
+    .block {
+        margin-bottom: 70px;
+    }
+
+    .block h2 {
+        font-size: 32px;
+    }
+
+    .project-item {
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .project-item .num {
+        font-size: 26px;
+    }
+
+    .project-item h3 {
+        font-size: 17px;
     }
 }
