@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #fff5f8;
+    color: #3d2530;
+}
+
+:root {
+    --pink-dark: #b23a63;
+    --pink: #e0608c;
+    --pink-light: #f8c9d9;
+    --pink-pale: #fdeef3;
+    --text: #3d2530;
+    --muted: #7a5866;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    color: var(--pink-dark);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+}
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background: var(--pink-dark);
+    color: white;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--pink-light);
+    margin-bottom: 20px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.sidebar .role {
+    color: var(--pink-light);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: auto;
+}
+
+.side-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+}
+
+.side-nav a:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+.socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.socials a {
+    color: white;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials a:hover {
+    background: var(--pink-light);
+    color: var(--pink-dark);
+}
+
+
+.content {
+    flex: 1;
+    padding: 60px 60px 40px;
+    max-width: 800px;
+}
+
+.block {
+    margin-bottom: 70px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--pink-pale);
+    color: var(--pink-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.block h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 18px;
+}
+
+.block p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.project-item {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border: 1px solid var(--pink-light);
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.project-item .num {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    color: var(--pink-light);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.project-item h3 {
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.project-item .meta {
+    font-size: 12px;
+    color: var(--pink-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.skill-row {
+    margin-bottom: 22px;
+}
+
+.skill-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pink-dark);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chips span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--pink-light);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.chips i {
+    color: var(--pink);
+}
+
+footer {
+    color: var(--muted);
+    font-size: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--pink-light);
+}
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 20px;
+    }
+    .content {
+        padding: 40px 25px;
+    }
+}
