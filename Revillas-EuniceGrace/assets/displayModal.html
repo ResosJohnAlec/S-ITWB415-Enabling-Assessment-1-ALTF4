@@ -1,23 +1,26 @@
-<div class="preview-modal-overlay" id="previewModalOverlay" aria-hidden="true">
-  <div class="preview-modal" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="previewModalTitle">
-    <button class="preview-modal-close" id="previewModalClose" aria-label="Close preview">
-      <i class="fas fa-times"></i>
-    </button>
+<!-- Preview Modal - For displaying project screenshots in a larger view -->
+<div class="preview-modal-overlay" id="preview_modal_overlay" aria-hidden="true">
+    <div class="preview-modal" id="preview_modal" role="dialog" 
+        aria-modal="true" aria-labelledby="preview_modal_title">
+        <button class="preview-modal-close" id="preview_modal_close" aria-label="Close preview">
+            <i class="fas fa-times"></i>
+        </button>
 
-    <div class="preview-modal-header">
-      <h3 class="preview-modal-title" id="previewModalTitle"></h3>
+        <div class="preview-modal-header">
+            <h3 class="preview-modal-title" id="preview_modal_title"></h3>
+        </div>
+
+        <div id="preview_carousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner" id="preview_carousel_inner"></div>
+
+            <button class="carousel-control-prev" type="button" 
+                data-bs-target="#preview_carousel" data-bs-slide="prev">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" 
+                data-bs-target="#preview_carousel" data-bs-slide="next">
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
-
-    <div id="previewCarousel" class="carousel slide" data-bs-ride="false">
-      <div class="carousel-inner" id="previewCarouselInner"></div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#previewCarousel" data-bs-slide="prev">
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#previewCarousel" data-bs-slide="next">
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
 </div>
-

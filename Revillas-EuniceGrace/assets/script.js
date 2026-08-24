@@ -1,5 +1,5 @@
 // DYNAMIC PROJECTS ARRAY (requirement: use JS array to display projects dynamically)
-const projects = [
+const PROJECTS = [
     {
         title: "PassedAway",
         tag: "Web Design",
@@ -38,19 +38,45 @@ const projects = [
     }
 ];
 
+// SCROLL REVEAL
+const REVEAL_THRESHOLD = 0.12;
+const SCROLL_OFFSET = 400;
+const TYPING_SPEED = 110;
+const CAN_TYPING_SPEED = 85;
+const CAN_DELETE_SPEED = 50;
+const CAN_PAUSE_MS = 800;
+const CAN_DELETE_PAUSE = 250;
 
-//DYNAMIC PROJECT CARDS
+const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: REVEAL_THRESHOLD });
+
+// Observe all existing reveal elements
+document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+});
+
+// DYNAMIC PROJECT CARDS
 function renderProjects() {
-    const grid = document.getElementById("projectList");
-    if (!grid) return;
+    const grid = document.getElementById('project-list');
+    
+    if (!grid) {
+        return;
+    }
 
-    projects.forEach((p, index) => {
-        const card = document.createElement("div");
-        card.className = "project-card reveal";
-        card.setAttribute("data-index", index);
+    PROJECTS.forEach(function(project, index) {
+        const card = document.createElement('div');
+        
+        card.className = 'project-card reveal';
+        card.setAttribute('data-index', index);
+        
         card.innerHTML = `
             <div class="project-img-wrap">
-                <img src="${p.img}" alt="${p.title}">
+                <img src="${project.img}" alt="${project.title}">
                 <div class="project-overlay">
                     <button class="project-link-btn open-modal-btn" data-index="${index}">
                         <i class="fas fa-eye"></i> View
@@ -58,89 +84,94 @@ function renderProjects() {
                 </div>
             </div>
             <div class="project-body">
-                <span class="project-tag">${p.tag}</span>
-                <h5>${p.title}</h5>
-                <p>${p.desc}</p>
+                <span class="project-tag">${project.tag}</span>
+                <h5>${project.title}</h5>
+                <p>${project.desc}</p>
                 <button class="project-btn open-modal-btn" data-index="${index}">
                     <i class="fas fa-arrow-right"></i> See Details
                 </button>
             </div>
         `;
+        
         grid.appendChild(card);
     });
 
     const newReveals = grid.querySelectorAll('.reveal');
-    newReveals.forEach(el => revealObserver.observe(el));
+    
+    newReveals.forEach(function(el) {
+        revealObserver.observe(el);
+    });
 
-    document.querySelectorAll('.open-modal-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const idx = parseInt(btn.getAttribute('data-index'));
-            openProjectModal(idx);
-        });
+    document.querySelectorAll('.open-modal-btn').forEach(function(btn) {
+        btn.addEventListener('click', handleModalButtonClick);
     });
 }
 
-
-// SCROLL REVEAL
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.12 });
-
-// Observe all existing reveal elements
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
+function handleModalButtonClick(event) {
+    event.preventDefault();
+    
+    const index = parseInt(this.getAttribute('data-index'), 10);
+    
+    openProjectModal(index);
+}
 
 // BACK TO TOP BUTTON
-const btn = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-    btn.classList.toggle('show', window.scrollY > 400);
-});
+function handleBackToTopScroll() {
+    const btn = document.getElementById('back-to-top');
+    
+    if (!btn) {
+        return;
+    }
+    
+    if (window.scrollY > SCROLL_OFFSET) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+}
 
+window.addEventListener('scroll', handleBackToTopScroll);
 
 // TYPING ANIMATION
 (function startTyping() {
-    const nameEl = document.getElementById('typingName');
-    if (!nameEl) return;
+    const nameEl = document.getElementById('typing-name');
+    
+    if (!nameEl) {
+        return;
+    }
 
-    const fullText = "Eunice Grace";
-    let i = 0;
-    let typing = true;
+    const fullText = 'Eunice Grace';
+    let index = 0;
+    let isTyping = true;
 
     function typeName() {
-        if (!typing) return;
+        if (!isTyping) {
+            return;
+        }
 
-        if (i <= fullText.length) {
-            nameEl.innerHTML = fullText.slice(0, i) + '<span class="cursor">|</span>';
-            i++;
-            setTimeout(typeName, 110);
+        if (index <= fullText.length) {
+            nameEl.innerHTML = fullText.slice(0, index) + '<span class="cursor">|</span>';
+            index++;
+            setTimeout(typeName, TYPING_SPEED);
         }
     }
 
     typeName();
 
     // Subtitle typing: "I can" + cycling phrases
-    const canEl = document.getElementById('typingCan');
+    const canEl = document.getElementById('typing-can');
+    
     if (canEl) {
         const canPhrases = [
-            "build clean websites",
-            "make your frontend shine",
-            "create responsive UI",
-            "turn ideas into pages"
+            'build clean websites',
+            'make your frontend shine',
+            'create responsive UI',
+            'turn ideas into pages'
         ];
-
 
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-
-        const typeSpeed = 85;
-        const deleteSpeed = 50;
-        const pauseMs = 800;
 
         function tickCan() {
             const current = canPhrases[phraseIndex];
@@ -151,11 +182,11 @@ window.addEventListener('scroll', () => {
 
                 if (charIndex >= current.length) {
                     isDeleting = true;
-                    setTimeout(tickCan, pauseMs);
+                    setTimeout(tickCan, CAN_PAUSE_MS);
                     return;
                 }
 
-                setTimeout(tickCan, typeSpeed);
+                setTimeout(tickCan, CAN_TYPING_SPEED);
             } else {
                 charIndex--;
                 canEl.innerHTML = current.slice(0, charIndex) + '<span class="cursor">|</span>';
@@ -163,11 +194,11 @@ window.addEventListener('scroll', () => {
                 if (charIndex < 0) {
                     isDeleting = false;
                     phraseIndex = (phraseIndex + 1) % canPhrases.length;
-                    setTimeout(tickCan, 250);
+                    setTimeout(tickCan, CAN_DELETE_PAUSE);
                     return;
                 }
 
-                setTimeout(tickCan, deleteSpeed);
+                setTimeout(tickCan, CAN_DELETE_SPEED);
             }
         }
 
@@ -175,51 +206,65 @@ window.addEventListener('scroll', () => {
     }
 })();
 
-
-
-
 // DARK MODE TOGGLE
-const darkToggleBtn = document.getElementById('darkModeToggle');
-const darkModeIcon  = document.getElementById('darkModeIcon');
+function handleDarkModeToggle() {
+    const icon = document.getElementById('dark-mode-icon');
+    
+    document.body.classList.toggle('light-mode');
+    
+    const isLight = document.body.classList.contains('light-mode');
+
+    if (isLight) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'light');
+    } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+const darkToggleBtn = document.getElementById('dark-mode-toggle');
+const darkModeIcon = document.getElementById('dark-mode-icon');
 
 // Load saved preference
 const savedTheme = localStorage.getItem('theme');
+
 if (savedTheme === 'light') {
     document.body.classList.add('light-mode');
     darkModeIcon.classList.replace('fa-moon', 'fa-sun');
 }
 
-darkToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-
-    // Swap icon
-    if (isLight) {
-        darkModeIcon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'light');
-    } else {
-        darkModeIcon.classList.replace('fa-sun', 'fa-moon');
-        localStorage.setItem('theme', 'dark');
-    }
-});
-
+darkToggleBtn.addEventListener('click', handleDarkModeToggle);
 
 // NAVBAR SCROLL EFFECT
-window.addEventListener('scroll', () => {
-    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
-});
+function handleNavbarScroll() {
+    const nav = document.getElementById('main-nav');
+    
+    if (!nav) {
+        return;
+    }
+    
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+}
 
+window.addEventListener('scroll', handleNavbarScroll);
 
 // ACTIVE NAV HIGHLIGHT
 const sections = document.querySelectorAll('section[id]');
-const navLinkEls = document.querySelectorAll('#navLinks .nav-link[data-section]');
+const navLinkEls = document.querySelectorAll('#nav-links .nav-link[data-section]');
 
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const sectionObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
-            navLinkEls.forEach(link => {
+            
+            navLinkEls.forEach(function(link) {
                 link.classList.remove('nav-active');
+                
                 if (link.getAttribute('data-section') === id) {
                     link.classList.add('nav-active');
                 }
@@ -228,31 +273,36 @@ const sectionObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.4 });
 
-sections.forEach(sec => sectionObserver.observe(sec));
-
+sections.forEach(function(sec) {
+    sectionObserver.observe(sec);
+});
 
 // FORM VALIDATION
-const contactForm = document.getElementById('contactForm');
+function validateForm(event) {
+    event.preventDefault();
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const msgInput = document.getElementById('contact-message');
+    const formMsg = document.getElementById('form-msg');
 
-    const nameInput  = document.getElementById('contactName');
-    const emailInput = document.getElementById('contactEmail');
-    const msgInput   = document.getElementById('contactMessage');
-    const formMsg    = document.getElementById('formMsg');
-
-    const nameError  = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const msgError   = document.getElementById('msgError');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const msgError = document.getElementById('msg-error');
 
     // Clear previous errors
-    [nameInput, emailInput, msgInput].forEach(el => el.classList.remove('input-error'));
-    [nameError, emailError, msgError].forEach(el => el.textContent = '');
+    [nameInput, emailInput, msgInput].forEach(function(el) {
+        el.classList.remove('input-error');
+    });
+    
+    [nameError, emailError, msgError].forEach(function(el) {
+        el.textContent = '';
+    });
+    
     formMsg.textContent = '';
     formMsg.className = 'form-msg';
 
-    let valid = true;
+    let isValid = true;
 
     // Validate name (no numbers)
     const nameVal = nameInput.value.trim();
@@ -261,33 +311,34 @@ contactForm.addEventListener('submit', (e) => {
     if (nameVal === '') {
         nameInput.classList.add('input-error');
         nameError.textContent = 'Name is required.';
-        valid = false;
+        isValid = false;
     } else if (hasNumbers) {
         nameInput.classList.add('input-error');
         nameError.textContent = 'Name should not contain numbers.';
-        valid = false;
+        isValid = false;
     }
 
-    // Validate email (email-only, no numbers requirement is not applied here)
+    // Validate email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
     if (emailInput.value.trim() === '') {
         emailInput.classList.add('input-error');
         emailError.textContent = 'Email is required.';
-        valid = false;
+        isValid = false;
     } else if (!emailPattern.test(emailInput.value.trim())) {
         emailInput.classList.add('input-error');
         emailError.textContent = 'Please enter a valid email address.';
-        valid = false;
+        isValid = false;
     }
 
     // Validate message
     if (msgInput.value.trim() === '') {
         msgInput.classList.add('input-error');
         msgError.textContent = 'Message cannot be empty.';
-        valid = false;
+        isValid = false;
     }
 
-    if (!valid) {
+    if (!isValid) {
         formMsg.textContent = 'Please fix the errors above.';
         formMsg.classList.add('error');
         return;
@@ -296,57 +347,86 @@ contactForm.addEventListener('submit', (e) => {
     // Success
     formMsg.textContent = 'Message sent successfully! I\'ll get back to you soon.';
     formMsg.classList.add('success');
+    
+    const contactForm = document.getElementById('contact-form');
     contactForm.reset();
-});
+}
 
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', validateForm);
 
 // MODAL POPUP
-const modalOverlay = document.getElementById('projectModalOverlay');
-const modalClose   = document.getElementById('modalClose');
-
 function openProjectModal(index) {
-    const p = projects[index];
-    if (!p) return;
+    const project = PROJECTS[index];
+    
+    if (!project) {
+        return;
+    }
 
-    document.getElementById('modalImg').src   = p.img;
-    document.getElementById('modalImg').alt   = p.title;
-    document.getElementById('modalTag').textContent  = p.tag;
-    document.getElementById('modalTitle').textContent = p.title;
-    document.getElementById('modalDesc').textContent  = p.longDesc;
+    const modalImg = document.getElementById('modal-img');
+    const modalTag = document.getElementById('modal-tag');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalViewBtn = document.getElementById('modal-view-btn');
+    const techContainer = document.getElementById('modal-tech');
+    const modalOverlay = document.getElementById('project-modal-overlay');
 
-    const modalViewBtn = document.getElementById('modalViewBtn');
-    modalViewBtn.href = p.displayAnchor;
-modalViewBtn.addEventListener('click', (e) => {
-        const id = (p.displayAnchor || '').replace('#', '');
+    modalImg.src = project.img;
+    modalImg.alt = project.title;
+    modalTag.textContent = project.tag;
+    modalTitle.textContent = project.title;
+    modalDesc.textContent = project.longDesc;
+    modalViewBtn.href = project.displayAnchor;
 
-        e.preventDefault();
+    // Remove any existing event listeners by cloning
+    const newViewBtn = modalViewBtn.cloneNode(true);
+    modalViewBtn.parentNode.replaceChild(newViewBtn, modalViewBtn);
+
+    newViewBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        const id = (project.displayAnchor || '').replace('#', '');
+        
         if (window.openPreviewModalFromId) {
             window.openPreviewModalFromId(id);
         }
-    }, { once: true });
+    });
 
-
-
-    const techContainer = document.getElementById('modalTech');
-    techContainer.innerHTML = p.tech.map(t => `<span>${t}</span>`).join('');
+    techContainer.innerHTML = project.tech.map(function(tech) {
+        return '<span>' + tech + '</span>';
+    }).join('');
 
     modalOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
 }
 
 function closeProjectModal() {
+    const modalOverlay = document.getElementById('project-modal-overlay');
+    
     modalOverlay.classList.remove('open');
     document.body.style.overflow = '';
 }
 
-modalClose.addEventListener('click', closeProjectModal);
-modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) closeProjectModal();
-});
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeProjectModal();
-});
+function handleModalOverlayClick(event) {
+    const modalOverlay = document.getElementById('project-modal-overlay');
+    
+    if (event.target === modalOverlay) {
+        closeProjectModal();
+    }
+}
 
+function handleEscapeKey(event) {
+    if (event.key === 'Escape') {
+        closeProjectModal();
+    }
+}
+
+const modalClose = document.getElementById('modal-close');
+const modalOverlay = document.getElementById('project-modal-overlay');
+
+modalClose.addEventListener('click', closeProjectModal);
+modalOverlay.addEventListener('click', handleModalOverlayClick);
+document.addEventListener('keydown', handleEscapeKey);
 
 // INITIALISE: render projects after page loads
 document.addEventListener('DOMContentLoaded', renderProjects);

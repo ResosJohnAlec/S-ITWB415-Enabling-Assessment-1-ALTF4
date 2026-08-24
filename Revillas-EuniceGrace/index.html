@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,53 +13,49 @@
     <link href="assets/styles.css" rel="stylesheet">
 </head>
 
-
 <body>
-
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg sticky-top" id="main-nav">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="#">My Portfolio<span class="dot">.</span></a>
             <div class="d-flex align-items-center gap-2 ms-auto">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <!-- Navigation Toggle -->
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar-supported-content"
+                    aria-controls="navbar-supported-content"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <i class="fas fa-bars" style="color:#00d4ff"></i>
                 </button>
             </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-1" id="navLinks">
+            <div class="collapse navbar-collapse" id="navbar-supported-content">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-1" id="nav-links">
                     <li class="nav-item"><a class="nav-link" href="#home" data-section="home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#AboutMe" data-section="AboutMe">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Projects" data-section="Projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Skills" data-section="Skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-me" data-section="about-me">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-section="projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-section="skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact" data-section="contact">Contact</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
                             aria-expanded="false">More</a>
                         <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#AboutMe"><i class="fas fa-user me-2"></i>About Me</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#Projects"><i class="fas fa-code me-2"></i>Project
-                                    List</a></li>
-                            <li><a class="dropdown-item" href="#Display"><i class="fas fa-desktop me-2"></i>Display
-                                    Projects</a></li>
-                            <li><a class="dropdown-item" href="#used-websites"><i class="fas fa-star me-2"></i>Used
-                                    Websites</a></li>
+                            <li><a class="dropdown-item" href="#about-me"><i class="fas fa-user me-2"></i>About Me</a></li>
+                            <li><a class="dropdown-item" href="#projects"><i class="fas fa-code me-2"></i>Project List</a></li>
+                            <li><a class="dropdown-item" href="#display"><i class="fas fa-desktop me-2"></i>Display Projects</a></li>
+                            <li><a class="dropdown-item" href="#used-websites"><i class="fas fa-star me-2"></i>Used Websites</a></li>
                         </ul>
                     </li>
-                        <!-- Dark Mode Toggle -->
-                <button id="darkModeToggle" class="dark-toggle" title="Toggle Dark/Light Mode"
-                    aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon" id="darkModeIcon"></i>
-                </button>
+                    <button id="dark-mode-toggle" class="dark-toggle"
+                        title="Toggle Dark/Light Mode"
+                        aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon" id="dark-mode-icon"></i>
+                    </button>
                 </ul>
             </div>
         </div>
     </nav>
-
 
     <!-- Hero Section -->
     <section class="home" id="home">
@@ -71,31 +66,23 @@
         <div class="hero-content container">
             <div class="hero-text fade-in">
                 <p class="hero-greeting"><i class="fas fa-hand-wave"></i> Hello, I'm</p>
-                <!-- Typing animation (name) -->
-                <h1 class="hero-name" id="typingName"><span class="cursor">|</span></h1>
-
-                <!-- Subtitle typing: "I can ..." -->
+                <h1 class="hero-name" id="typing-name"><span class="cursor">|</span></h1>
                 <p class="hero-can-line" aria-label="I can: dynamic skills">
                     <span class="hero-can-static">I can</span>
-                    <span class="hero-can-dynamic" id="typingCan">
+                    <span class="hero-can-dynamic" id="typing-can">
                         <span class="cursor">|</span>
                     </span>
                 </p>
-
                 <h2 class="hero-title">Website Developer</h2>
-
                 <p class="hero-desc">An Information Technology student with a passion for clean frontend design and
                     workflow automation. From building static interfaces to learning full-stack development, I love
                     creating functional digital experiences.</p>
                 <div class="hero-btns">
-                    <!--<a href="#contact" class="btn-primary-custom">Hire Me</a>--->
-                    <a href="#AboutMe" class="btn-outline-custom">About Me</a>
+                    <a href="#about-me" class="btn-outline-custom">About Me</a>
                 </div>
                 <div class="hero-socials">
-                    <a href="https://www.facebook.com/eunicezyl22" class="social-icon"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/eunice-revillas-0382a4270/" class="social-icon"><i
-                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/eunicezyl22" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/eunice-revillas-0382a4270/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/YunizGrce" class="social-icon"><i class="fab fa-github"></i></a>
                 </div>
             </div>
@@ -104,15 +91,10 @@
                 <img src="assets/profile.jpg" alt="Profile">
             </div>
         </div>
-        <!-- <div class="scroll-indicator">
-            <span></span>
-            <p>Scroll Down</p>
-        </div> -->
     </section>
 
-
     <!-- About Me Section -->
-    <section class="about-me" id="AboutMe">
+    <section class="about-me" id="about-me">
         <div class="container">
             <div class="section-header reveal">
                 <p class="section-tag"><i class="fas fa-user-circle"></i> Who I Am</p>
@@ -132,119 +114,29 @@
                         experiences and managing efficient tech workflows. I enjoy turning complex problems into
                         structured code and continuous learning.</p>
 
-                    <h4 class="mt-4 mb-3" style="color: var(--accent); font-size: 1.2rem;"><i
-                            class="fas fa-graduation-cap me-2"></i> Education History</h4>
-                    <ul class="list-unstyled ps-2" style="border-left: 2px solid var(--border); margin-bottom: 2rem;">
+                    <h4 class="mt-4 mb-3 education-title"><i class="fas fa-graduation-cap me-2"></i> Education History</h4>
+                    <ul class="list-unstyled ps-2 education-list">
                         <li class="mb-3 ps-3 position-relative">
-                            <strong style="color: var(--text-primary);">De La Salle University – Dasmariñas
-                                (DLSU-D)</strong><br>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Bachelor of Science in
-                                Information Technology | Present</span>
+                            <strong class="education-school">De La Salle University – Dasmariñas (DLSU-D)</strong>
+                            <span class="education-detail">Bachelor of Science in Information Technology | Present</span>
                         </li>
                         <li class="mb-3 ps-3 position-relative">
-                            <strong style="color: var(--text-primary);">Emilio Aguinaldo College (EAC)</strong><br>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Senior High School</span>
+                            <strong class="education-school">Emilio Aguinaldo College (EAC)</strong>
+                            <span class="education-detail">Senior High School</span>
                         </li>
                         <li class="ps-3 position-relative">
-                            <strong style="color: var(--text-primary);">Dasmariñas West National High School
-                                (DWNHS)</strong><br>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Junior High School</span>
+                            <strong class="education-school">Dasmariñas West National High School (DWNHS)</strong>
+                            <span class="education-detail">Junior High School</span>
                         </li>
                     </ul>
-
-
                     <a href="#contact" class="btn-primary-custom">Let's Talk <i class="fas fa-arrow-right ms-1"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Hobbies Section -->
-    <!-- <section class="hobbies" id="Hobbies">
-        <div class="container">
-            <div class="section-header reveal">
-                <p class="section-tag"><i class="fas fa-heart"></i> What I Love</p>
-                <h2>My <span class="accent">Hobbies</span></h2>
-                <div class="section-line"></div>
-            </div>
-            <p class="section-sub reveal">When I'm not coding, you can find me:</p>
-            <div class="hobbies-grid">
-
-
-                <div class="hobby-card reveal">
-                    <div class="hobby-icon-wrap">
-                        <img src="assets/sleeping.jpg" alt="Sleeping" class="hobby-img">
-                    </div>
-                    <div class="hobby-body">
-                        <h5>Sleeping</h5>
-                        <p>Recharging my batteries for the next coding marathon. Quality sleep is a superpower.</p>
-                    </div>
-                </div>
-
-
-                <div class="hobby-card reveal">
-                    <div class="hobby-icon-wrap">
-                        <img src="assets/star.jpg" alt="Stardew Valley" class="hobby-img">
-                    </div>
-                    <div class="hobby-body">
-                        <h5>Playing Stardew Valley</h5>
-                        <p>Farming, fishing, and befriending the townsfolk. A perfect escape from the screen.</p>
-                    </div>
-                </div>
-
-
-                <div class="hobby-card reveal">
-                    <div class="hobby-icon-wrap">
-                        <img src="assets/anime.jpg" alt="Anime" class="hobby-img">
-                    </div>
-                    <div class="hobby-body">
-                        <h5>Watching Anime</h5>
-                        <p>From shonen battles to slice-of-life stories, there's always a new world to explore.</p>
-                    </div>
-                </div>
-
-
-                <div class="hobby-card reveal">
-                    <div class="hobby-icon-wrap">
-                        <img src="assets/movies.jpg" alt="Movies" class="hobby-img">
-                    </div>
-                    <div class="hobby-body">
-                        <h5>Watching Movies</h5>
-                        <p>A good film, a dark room, and snacks — the perfect combination for any evening.</p>
-                    </div>
-                </div>
-
-
-                <div class="hobby-card reveal">
-                    <div class="hobby-icon-wrap">
-                        <img src="assets/manhwa.jpg" alt="Manhwa" class="hobby-img">
-                    </div>
-                    <div class="hobby-body">
-                        <h5>Reading Manhwa</h5>
-                        <p>Beautifully illustrated Korean comics with stories that keep me hooked for hours.</p>
-                    </div>
-                </div>
-
-
-                <div class="hobby-card reveal">
-                    <div class="hobby-icon-wrap">
-                        <img src="assets/upcycle.jpg" alt="Upcycling" class="hobby-img">
-                    </div>
-                    <div class="hobby-body">
-                        <h5>Upcycling Clothes</h5>
-                        <p>Turning old garments into something new and unique — sustainable and creative.</p>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section> -->
-
-
     <!-- Skills Section -->
-    <section class="skills" id="Skills">
+    <section class="skills" id="skills">
         <div class="container">
             <div class="section-header reveal">
                 <p class="section-tag"><i class="fas fa-microchip"></i> What I Know</p>
@@ -253,8 +145,6 @@
             </div>
             <p class="section-sub reveal">My current skills are:</p>
             <div class="skills-grid">
-
-
                 <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fab fa-js"></i></div>
                     <div class="skills-body">
@@ -262,8 +152,6 @@
                         <p>Creating dynamic and interactive web experiences with modern JavaScript.</p>
                     </div>
                 </div>
-
-
                 <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fab fa-java"></i></div>
                     <div class="skills-body">
@@ -271,8 +159,6 @@
                         <p>Building robust and scalable applications with the Java programming language.</p>
                     </div>
                 </div>
-
-
                 <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fab fa-python"></i></div>
                     <div class="skills-body">
@@ -280,8 +166,6 @@
                         <p>Writing clean and efficient code for data analysis, automation, and web development.</p>
                     </div>
                 </div>
-
-
                 <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fab fa-php"></i></div>
                     <div class="skills-body">
@@ -289,8 +173,6 @@
                         <p>Developing server-side applications and managing databases with PHP.</p>
                     </div>
                 </div>
-
-
                 <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fab fa-html5"></i></div>
                     <div class="skills-body">
@@ -298,8 +180,6 @@
                         <p>Building the structure and content of web pages with semantic HTML.</p>
                     </div>
                 </div>
-
-
                 <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fab fa-css3-alt"></i></div>
                     <div class="skills-body">
@@ -307,7 +187,6 @@
                         <p>Creating visually appealing and responsive designs with modern CSS techniques.</p>
                     </div>
                 </div>
-
                 <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fab fa-node-js"></i></div>
                     <div class="skills-body">
@@ -315,8 +194,7 @@
                         <p>Building scalable server-side applications with Node.js.</p>
                     </div>
                 </div>
-
-                                <div class="skills-card reveal">
+                <div class="skills-card reveal">
                     <div class="skills-icon-wrap"><i class="fas fa-database"></i></div>
                     <div class="skills-body">
                         <h5>SQL</h5>
@@ -326,7 +204,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Used Websites Section -->
     <section class="used-websites" id="used-websites">
@@ -353,31 +230,22 @@
                     <i class="fab fa-dribbble"></i>
                     <span>Dribbble</span>
                 </a>
-<a href="https://code.visualstudio.com" target="_blank" class="used-card">
-    <!-- Clean VS Code direct SVG insertion -->
-    <svg role="img" viewBox="0 0 24 24" fill="#7a8fa6" style="width: 24px; height: 24px; margin-bottom: 8px;">
-        <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.44-3.4a1.121 1.121 0 0 0-1.424.085L.31 6.618a1.12 1.12 0 0 0-.142 1.494l3.563 4.841L.168 17.794a1.12 1.12 0 0 0 .142 1.494l.871.792a1.121 1.121 0 0 0 1.424.085l4.44-3.4 9.46 8.63a1.495 1.495 0 0 0 1.705.29l4.94-2.377A1.5 1.5 0 0 0 24 22.06V3.908a1.5 1.5 0 0 0-.85-1.321zM18 17.584l-4.5-3.5 4.5-3.5v7z"/>
-    </svg>
-    <span>VS Code</span>
-</a>
+                <a href="https://code.visualstudio.com" target="_blank" class="used-card">
+                    <svg role="img" viewBox="0 0 24 24" fill="#7a8fa6" style="width: 24px; height: 24px; margin-bottom: 8px;">
+                        <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.44-3.4a1.121 1.121 0 0 0-1.424.085L.31 6.618a1.12 1.12 0 0 0-.142 1.494l3.563 4.841L.168 17.794a1.12 1.12 0 0 0 .142 1.494l.871.792a1.121 1.121 0 0 0 1.424.085l4.44-3.4 9.46 8.63a1.495 1.495 0 0 0 1.705.29l4.94-2.377A1.5 1.5 0 0 0 24 22.06V3.908a1.5 1.5 0 0 0-.85-1.321zM18 17.584l-4.5-3.5 4.5-3.5v7z"/>
+                    </svg>
+                    <span>VS Code</span>
+                </a>
                 <a href="https://www.figma.com" target="_blank" class="used-card">
                     <i class="fab fa-figma"></i>
                     <span>Figma</span>
                 </a>
             </div>
-            <!--<div class="fav-grid reveal">
-                <a href="https://website.com" target="_blank" class="fav-card">
-                    <i class="fas fa-film"></i>
-                    <span>my go to movie website</span>
-                </a>
-            </div>-->
         </div>
     </section>
 
-
     <!-- Project List Section -->
-    <!-- Dynamic Content: Projects rendered from JS array (requirement) -->
-    <section class="projects-section" id="Projects">
+    <section class="projects-section" id="projects">
         <div class="container">
             <div class="section-header reveal">
                 <p class="section-tag"><i class="fas fa-laptop-code"></i> My Work</p>
@@ -385,14 +253,12 @@
                 <div class="section-line"></div>
             </div>
             <p class="section-sub reveal">Here are some of the projects I have worked on:</p>
-            <!-- projects-grid is populated dynamically by JavaScript -->
-            <div class="projects-grid" id="projectList"></div>
+            <div class="projects-grid" id="project-list"></div>
         </div>
     </section>
 
-
     <!-- Display Projects Section -->
-    <section class="display-projects" id="Display">
+    <section class="display-projects" id="display">
         <div class="container">
             <div class="section-header reveal">
                 <p class="section-tag"><i class="fas fa-desktop"></i> Live Previews</p>
@@ -401,154 +267,133 @@
             </div>
             <p class="section-sub reveal">Browse through live previews of the projects below:</p>
 
-
             <div class="carousel-container">
-
-
                 <div class="carousel-block reveal">
-                        <div class="carousel-label">
-                            <i class="fas fa-folder-open"></i> PassedAway
-                            <button type="button" class="carousel-pop-btn" data-carousel="PassedAway" aria-label="Open PassedAway preview">View</button>
-                        </div>
+                    <div class="carousel-label">
+                        <i class="fas fa-folder-open"></i> PassedAway
+                        <button type="button" class="carousel-pop-btn"
+                            data-carousel="PassedAway"
+                            aria-label="Open PassedAway preview">View</button>
+                    </div>
                     <div id="PassedAway" class="carousel slide" data-bs-ride="false">
-
                         <div class="carousel-inner">
-                            <div class="carousel-item active"><img src="assets/1.png" class="d-block w-100"
-                                    alt="PassedAway 1"></div>
-                            <div class="carousel-item"><img src="assets/2.png" class="d-block w-100" alt="PassedAway 2">
-                            </div>
-                            <div class="carousel-item"><img src="assets/3.png" class="d-block w-100" alt="PassedAway 3">
-                            </div>
-                            <div class="carousel-item"><img src="assets/5.png" class="d-block w-100" alt="PassedAway 4">
-                            </div>
+                            <div class="carousel-item active"><img src="assets/1.png" class="d-block w-100" alt="PassedAway 1"></div>
+                            <div class="carousel-item"><img src="assets/2.png" class="d-block w-100" alt="PassedAway 2"></div>
+                            <div class="carousel-item"><img src="assets/3.png" class="d-block w-100" alt="PassedAway 3"></div>
+                            <div class="carousel-item"><img src="assets/5.png" class="d-block w-100" alt="PassedAway 4"></div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#PassedAway"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#PassedAway" data-bs-slide="prev">
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#PassedAway"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#PassedAway" data-bs-slide="next">
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
 
                 <div class="carousel-block reveal">
-                        <div class="carousel-label">
-                            <i class="fas fa-folder-open"></i> Kofi Compass
-                            <button type="button" class="carousel-pop-btn" data-carousel="KofiCompass" aria-label="Open Kofi Compass preview">View</button>
-                        </div>
+                    <div class="carousel-label">
+                        <i class="fas fa-folder-open"></i> Kofi Compass
+                        <button type="button" class="carousel-pop-btn"
+                            data-carousel="KofiCompass"
+                            aria-label="Open Kofi Compass preview">View</button>
+                    </div>
                     <div id="KofiCompass" class="carousel slide" data-bs-ride="false">
-
                         <div class="carousel-inner">
-                            <div class="carousel-item active"><img src="assets/k1.png" class="d-block w-100"
-                                    alt="KofiCompass 1"></div>
-                            <div class="carousel-item"><img src="assets/k2.png" class="d-block w-100"
-                                    alt="KofiCompass 2"></div>
-                            <div class="carousel-item"><img src="assets/k3.png" class="d-block w-100"
-                                    alt="KofiCompass 3"></div>
-                            <div class="carousel-item"><img src="assets/k4.png" class="d-block w-100"
-                                    alt="KofiCompass 4"></div>
-                            <div class="carousel-item"><img src="assets/k5.png" class="d-block w-100"
-                                    alt="KofiCompass 5"></div>
-                            <div class="carousel-item"><img src="assets/k6.png" class="d-block w-100"
-                                    alt="KofiCompass 6"></div>
-                            <div class="carousel-item"><img src="assets/k7.png" class="d-block w-100"
-                                    alt="KofiCompass 7"></div>
+                            <div class="carousel-item active"><img src="assets/k1.png" class="d-block w-100" alt="KofiCompass 1"></div>
+                            <div class="carousel-item"><img src="assets/k2.png" class="d-block w-100" alt="KofiCompass 2"></div>
+                            <div class="carousel-item"><img src="assets/k3.png" class="d-block w-100" alt="KofiCompass 3"></div>
+                            <div class="carousel-item"><img src="assets/k4.png" class="d-block w-100" alt="KofiCompass 4"></div>
+                            <div class="carousel-item"><img src="assets/k5.png" class="d-block w-100" alt="KofiCompass 5"></div>
+                            <div class="carousel-item"><img src="assets/k6.png" class="d-block w-100" alt="KofiCompass 6"></div>
+                            <div class="carousel-item"><img src="assets/k7.png" class="d-block w-100" alt="KofiCompass 7"></div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#KofiCompass"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#KofiCompass" data-bs-slide="prev">
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#KofiCompass"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#KofiCompass" data-bs-slide="next">
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
 
-
                 <div class="carousel-block reveal">
-                        <div class="carousel-label">
-                            <i class="fas fa-folder-open"></i> ItadakiMasu 
-                            <button type="button" class="carousel-pop-btn" data-carousel="ItadakiMasu" aria-label="Open ItadakiMasu preview">View</button>
-                        </div>
+                    <div class="carousel-label">
+                        <i class="fas fa-folder-open"></i> ItadakiMasu
+                        <button type="button" class="carousel-pop-btn"
+                            data-carousel="ItadakiMasu"
+                            aria-label="Open ItadakiMasu preview">View</button>
+                    </div>
                     <div id="ItadakiMasu" class="carousel slide" data-bs-ride="false">
-
                         <div class="carousel-inner">
-                            <div class="carousel-item active"><img src="assets/I1.png" class="d-block w-100"
-                                    alt="ItadakiMasu 1"></div>
-                            <div class="carousel-item"><img src="assets/I2.png" class="d-block w-100"
-                                    alt="ItadakiMasu 2"></div>
+                            <div class="carousel-item active"><img src="assets/I1.png" class="d-block w-100" alt="ItadakiMasu 1"></div>
+                            <div class="carousel-item"><img src="assets/I2.png" class="d-block w-100" alt="ItadakiMasu 2"></div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#ItadakiMasu"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#ItadakiMasu" data-bs-slide="prev">
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#ItadakiMasu"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#ItadakiMasu" data-bs-slide="next">
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
-
 
                 <div class="carousel-block reveal">
-                        <div class="carousel-label">
-                            <i class="fas fa-folder-open"></i> Monthsary Gift
-                            <button type="button" class="carousel-pop-btn" data-carousel="Motmot" aria-label="Open Monthsary Gift preview">View</button>
-                        </div>
+                    <div class="carousel-label">
+                        <i class="fas fa-folder-open"></i> Monthsary Gift
+                        <button type="button" class="carousel-pop-btn"
+                            data-carousel="Motmot"
+                            aria-label="Open Monthsary Gift preview">View</button>
+                    </div>
                     <div id="Motmot" class="carousel slide" data-bs-ride="false">
-
                         <div class="carousel-inner">
-                            <div class="carousel-item active"><img src="assets/m1.png" class="d-block w-100"
-                                    alt="Monthsary 1"></div>
-                            <div class="carousel-item"><img src="assets/m2.png" class="d-block w-100" alt="Monthsary 2">
-                            </div>
-                            <div class="carousel-item"><img src="assets/m3.png" class="d-block w-100" alt="Monthsary 3">
-                            </div>
+                            <div class="carousel-item active"><img src="assets/m1.png" class="d-block w-100" alt="Monthsary 1"></div>
+                            <div class="carousel-item"><img src="assets/m2.png" class="d-block w-100" alt="Monthsary 2"></div>
+                            <div class="carousel-item"><img src="assets/m3.png" class="d-block w-100" alt="Monthsary 3"></div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#Motmot"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#Motmot" data-bs-slide="prev">
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#Motmot"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#Motmot" data-bs-slide="next">
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </section>
-    
+
     <!-- Bigger modal carousel for Live Previews -->
-    <div class="preview-modal-overlay" id="previewModalOverlay" aria-hidden="true">
-        <div class="preview-modal" id="previewModal" role="dialog" aria-modal="true"
-            aria-labelledby="previewModalTitle">
-            <button class="preview-modal-close" id="previewModalClose" aria-label="Close preview">
+    <div class="preview-modal-overlay" id="preview-modal-overlay" aria-hidden="true">
+        <div class="preview-modal" id="preview-modal" role="dialog"
+            aria-modal="true" aria-labelledby="preview-modal-title">
+            <button class="preview-modal-close" id="preview-modal-close" aria-label="Close preview">
                 <i class="fas fa-times"></i>
             </button>
-
             <div class="preview-modal-header">
-                <h3 class="preview-modal-title" id="previewModalTitle"></h3>
+                <h3 class="preview-modal-title" id="preview-modal-title"></h3>
             </div>
-
-            <div id="previewCarousel" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-inner" id="previewCarouselInner"></div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#previewCarousel" data-bs-slide="prev">
+            <div id="preview-carousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner" id="preview-carousel-inner"></div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#preview-carousel" data-bs-slide="prev">
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#previewCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#preview-carousel" data-bs-slide="next">
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>
     </div>
-
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -563,44 +408,35 @@
                     <h4>Let's work <span class="accent">together</span></h4>
                     <p>Feel free to reach out for collaborations, questions, or just a friendly chat.</p>
                     <ul class="contact-list">
-                        <li><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span><span>Address or
-                                something something</span></li>
-                        <li><span class="contact-icon"><i class="fas fa-phone"></i></span><span>Contact or something
-                                something</span></li>
-                        <li><span class="contact-icon"><i class="fas fa-clock"></i></span><span>Open hours or something
-                                something</span></li>
-                        <li><span class="contact-icon"><i
-                                    class="fas fa-envelope"></i></span><span>plsleavemealone@gmail.com</span></li>
-                        <li><span class="contact-icon"><i
-                                    class="fas fa-globe"></i></span><span>www.IAmSuffering.com</span></li>
+                        <li><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span><span>Address placeholder</span></li>
+                        <li><span class="contact-icon"><i class="fas fa-phone"></i></span><span>Contact placeholder</span></li>
+                        <li><span class="contact-icon"><i class="fas fa-clock"></i></span><span>Open hours placeholder</span></li>
+                        <li><span class="contact-icon"><i class="fas fa-envelope"></i></span><span>plsleavemealone@gmail.com</span></li>
+                        <li><span class="contact-icon"><i class="fas fa-globe"></i></span><span>www.IAmSuffering.com</span></li>
                     </ul>
                     <div class="contact-socials">
-<a href="https://www.facebook.com/eunicezyl22" class="social-icon"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/eunice-revillas-0382a4270/" class="social-icon"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/YunizGrce" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/eunicezyl22" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/eunice-revillas-0382a4270/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/YunizGrce" class="social-icon"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <!-- Form Validation -->
                 <div class="contact-form reveal">
-                    <form id="contactForm" action="#" novalidate>
+                    <form id="contact-form" action="#" novalidate>
                         <div class="form-row">
                             <div class="input-group-wrap">
-                                <input type="text" id="contactName" placeholder="Your Name">
-                                <span class="field-error" id="nameError"></span>
+                                <input type="text" id="contact-name" placeholder="Your Name">
+                                <span class="field-error" id="name-error"></span>
                             </div>
                             <div class="input-group-wrap">
-                                <input type="email" id="contactEmail" placeholder="Email Address">
-                                <span class="field-error" id="emailError"></span>
+                                <input type="email" id="contact-email" placeholder="Email Address">
+                                <span class="field-error" id="email-error"></span>
                             </div>
                         </div>
                         <div class="input-group-wrap">
-                            <textarea id="contactMessage" placeholder="Your Message"></textarea>
-                            <span class="field-error" id="msgError"></span>
+                            <textarea id="contact-message" placeholder="Your Message"></textarea>
+                            <span class="field-error" id="msg-error"></span>
                         </div>
-                        <!-- Form success/error message -->
-                        <p id="formMsg" class="form-msg"></p>
+                        <p id="form-msg" class="form-msg"></p>
                         <button type="submit">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
                     </form>
                 </div>
@@ -608,80 +444,46 @@
         </div>
     </section>
 
-
     <!-- Footer -->
     <footer>
         <div class="footer-inner">
             <p class="footer-brand">Portfolio<span class="accent">.</span></p>
             <p class="footer-copy">&copy; 2025 My Website. All rights reserved.</p>
             <div class="footer-socials">
-<a href="https://www.facebook.com/eunicezyl22" class="social-icon"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/eunice-revillas-0382a4270/" class="social-icon"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/YunizGrce" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/eunicezyl22" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/eunice-revillas-0382a4270/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/YunizGrce" class="social-icon"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </footer>
 
-
     <!-- Back-to-top button -->
-    <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <a href="#home" class="back-to-top" id="back-to-top"><i class="fas fa-chevron-up"></i></a>
 
-    <!-- Bigger modal -->
-    <div class="preview-modal-overlay" id="previewModalOverlay" aria-hidden="true">
-        <div class="preview-modal" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="previewModalTitle">
-            <button class="preview-modal-close" id="previewModalClose" aria-label="Close preview">
-                <i class="fas fa-times"></i>
-            </button>
-
-            <div class="preview-modal-header">
-                <h3 class="preview-modal-title" id="previewModalTitle"></h3>
-            </div>
-
-            <div id="previewCarousel" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-inner" id="previewCarouselInner"></div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#previewCarousel" data-bs-slide="prev">
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#previewCarousel" data-bs-slide="next">
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!--View Modal popup -->
-    <div class="project-modal-overlay" id="projectModalOverlay">
-
-
-        <div class="project-modal" id="projectModal">
-
-
-            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+    <!-- View Modal popup -->
+    <div class="project-modal-overlay" id="project-modal-overlay">
+        <div class="project-modal" id="project-modal">
+            <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
             <div class="modal-img-wrap">
-                <img src="" alt="" id="modalImg">
+                <img src="" alt="" id="modal-img">
             </div>
             <div class="modal-body">
-                <span class="project-tag" id="modalTag"></span>
-                <h3 id="modalTitle"></h3>
-                <p id="modalDesc"></p>
-                <div class="modal-tech" id="modalTech"></div>
-                <a href="#Display" class="btn-primary-custom mt-3 modal-view-btn" id="modalViewBtn">
+                <span class="project-tag" id="modal-tag"></span>
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+                <div class="modal-tech" id="modal-tech"></div>
+                <a href="#display" class="btn-primary-custom mt-3 modal-view-btn" id="modal-view-btn">
                     <i class="fas fa-eye me-2"></i>View Display
                 </a>
             </div>
         </div>
     </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="assets/script.js"></script>
     <script src="assets/displayModal.js"></script>
-
 </body>
 
 </html>
