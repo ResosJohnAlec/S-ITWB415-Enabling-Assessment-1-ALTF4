@@ -40,7 +40,8 @@ const PROJECTS = [
 
 // SCROLL REVEAL
 const REVEAL_THRESHOLD = 0.12;
-const SCROLL_OFFSET = 400;
+const NAVBAR_SCROLL_THRESHOLD = 50;
+const BACK_TO_TOP_THRESHOLD = 400;
 const TYPING_SPEED = 110;
 const CAN_TYPING_SPEED = 85;
 const CAN_DELETE_SPEED = 50;
@@ -62,18 +63,18 @@ document.querySelectorAll('.reveal').forEach(function(el) {
 
 // DYNAMIC PROJECT CARDS
 function renderProjects() {
-    const grid = document.getElementById('project-list');
-    
+    const grid = document.getElementById('project_list');
+
     if (!grid) {
         return;
     }
 
     PROJECTS.forEach(function(project, index) {
         const card = document.createElement('div');
-        
+
         card.className = 'project-card reveal';
         card.setAttribute('data-index', index);
-        
+
         card.innerHTML = `
             <div class="project-img-wrap">
                 <img src="${project.img}" alt="${project.title}">
@@ -92,12 +93,12 @@ function renderProjects() {
                 </button>
             </div>
         `;
-        
+
         grid.appendChild(card);
     });
 
     const newReveals = grid.querySelectorAll('.reveal');
-    
+
     newReveals.forEach(function(el) {
         revealObserver.observe(el);
     });
@@ -109,21 +110,21 @@ function renderProjects() {
 
 function handleModalButtonClick(event) {
     event.preventDefault();
-    
+
     const index = parseInt(this.getAttribute('data-index'), 10);
-    
+
     openProjectModal(index);
 }
 
 // BACK TO TOP BUTTON
 function handleBackToTopScroll() {
-    const btn = document.getElementById('back-to-top');
-    
+    const btn = document.getElementById('back_to_top');
+
     if (!btn) {
         return;
     }
-    
-    if (window.scrollY > SCROLL_OFFSET) {
+
+    if (window.scrollY > BACK_TO_TOP_THRESHOLD) {
         btn.classList.add('show');
     } else {
         btn.classList.remove('show');
@@ -134,8 +135,8 @@ window.addEventListener('scroll', handleBackToTopScroll);
 
 // TYPING ANIMATION
 (function startTyping() {
-    const nameEl = document.getElementById('typing-name');
-    
+    const nameEl = document.getElementById('typing_name');
+
     if (!nameEl) {
         return;
     }
@@ -159,8 +160,8 @@ window.addEventListener('scroll', handleBackToTopScroll);
     typeName();
 
     // Subtitle typing: "I can" + cycling phrases
-    const canEl = document.getElementById('typing-can');
-    
+    const canEl = document.getElementById('typing_can');
+
     if (canEl) {
         const canPhrases = [
             'build clean websites',
@@ -209,9 +210,9 @@ window.addEventListener('scroll', handleBackToTopScroll);
 // DARK MODE TOGGLE
 function handleDarkModeToggle() {
     const icon = document.getElementById('dark-mode-icon');
-    
+
     document.body.classList.toggle('light-mode');
-    
+
     const isLight = document.body.classList.contains('light-mode');
 
     if (isLight) {
@@ -238,13 +239,13 @@ darkToggleBtn.addEventListener('click', handleDarkModeToggle);
 
 // NAVBAR SCROLL EFFECT
 function handleNavbarScroll() {
-    const nav = document.getElementById('main-nav');
-    
+    const nav = document.getElementById('main_nav');
+
     if (!nav) {
         return;
     }
-    
-    if (window.scrollY > 50) {
+
+    if (window.scrollY > NAVBAR_SCROLL_THRESHOLD) {
         nav.classList.add('scrolled');
     } else {
         nav.classList.remove('scrolled');
@@ -255,16 +256,16 @@ window.addEventListener('scroll', handleNavbarScroll);
 
 // ACTIVE NAV HIGHLIGHT
 const sections = document.querySelectorAll('section[id]');
-const navLinkEls = document.querySelectorAll('#nav-links .nav-link[data-section]');
+const navLinkEls = document.querySelectorAll('#nav_links .nav-link[data-section]');
 
 const sectionObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
-            
+
             navLinkEls.forEach(function(link) {
                 link.classList.remove('nav-active');
-                
+
                 if (link.getAttribute('data-section') === id) {
                     link.classList.add('nav-active');
                 }
@@ -294,11 +295,11 @@ function validateForm(event) {
     [nameInput, emailInput, msgInput].forEach(function(el) {
         el.classList.remove('input-error');
     });
-    
+
     [nameError, emailError, msgError].forEach(function(el) {
         el.textContent = '';
     });
-    
+
     formMsg.textContent = '';
     formMsg.className = 'form-msg';
 
@@ -308,7 +309,7 @@ function validateForm(event) {
     const nameVal = nameInput.value.trim();
     const hasNumbers = /\d/.test(nameVal);
 
-    if (nameVal === '') {
+    if (!nameVal) {
         nameInput.classList.add('input-error');
         nameError.textContent = 'Name is required.';
         isValid = false;
@@ -320,8 +321,8 @@ function validateForm(event) {
 
     // Validate email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (emailInput.value.trim() === '') {
+
+    if (!emailInput.value.trim()) {
         emailInput.classList.add('input-error');
         emailError.textContent = 'Email is required.';
         isValid = false;
@@ -331,13 +332,14 @@ function validateForm(event) {
         isValid = false;
     }
 
-    // Validate message
-    if (msgInput.value.trim() === '') {
+    // Validate message - use falsy check
+    if (!msgInput.value.trim()) {
         msgInput.classList.add('input-error');
         msgError.textContent = 'Message cannot be empty.';
         isValid = false;
     }
 
+    // Guard clause for invalid form
     if (!isValid) {
         formMsg.textContent = 'Please fix the errors above.';
         formMsg.classList.add('error');
@@ -347,7 +349,7 @@ function validateForm(event) {
     // Success
     formMsg.textContent = 'Message sent successfully! I\'ll get back to you soon.';
     formMsg.classList.add('success');
-    
+
     const contactForm = document.getElementById('contact-form');
     contactForm.reset();
 }
@@ -358,18 +360,18 @@ contactForm.addEventListener('submit', validateForm);
 // MODAL POPUP
 function openProjectModal(index) {
     const project = PROJECTS[index];
-    
+
     if (!project) {
         return;
     }
 
-    const modalImg = document.getElementById('modal-img');
-    const modalTag = document.getElementById('modal-tag');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-desc');
-    const modalViewBtn = document.getElementById('modal-view-btn');
-    const techContainer = document.getElementById('modal-tech');
-    const modalOverlay = document.getElementById('project-modal-overlay');
+    const modalImg = document.getElementById('modal_img');
+    const modalTag = document.getElementById('modal_tag');
+    const modalTitle = document.getElementById('modal_title');
+    const modalDesc = document.getElementById('modal_desc');
+    const modalViewBtn = document.getElementById('modal_view_btn');
+    const techContainer = document.getElementById('modal_tech');
+    const modalOverlay = document.getElementById('project_modal_overlay');
 
     modalImg.src = project.img;
     modalImg.alt = project.title;
@@ -384,9 +386,9 @@ function openProjectModal(index) {
 
     newViewBtn.addEventListener('click', function(event) {
         event.preventDefault();
-        
+
         const id = (project.displayAnchor || '').replace('#', '');
-        
+
         if (window.openPreviewModalFromId) {
             window.openPreviewModalFromId(id);
         }
@@ -397,19 +399,19 @@ function openProjectModal(index) {
     }).join('');
 
     modalOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('body-no-scroll');
 }
 
 function closeProjectModal() {
-    const modalOverlay = document.getElementById('project-modal-overlay');
-    
+    const modalOverlay = document.getElementById('project_modal_overlay');
+
     modalOverlay.classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.classList.remove('body-no-scroll');
 }
 
 function handleModalOverlayClick(event) {
-    const modalOverlay = document.getElementById('project-modal-overlay');
-    
+    const modalOverlay = document.getElementById('project_modal_overlay');
+
     if (event.target === modalOverlay) {
         closeProjectModal();
     }
@@ -421,8 +423,8 @@ function handleEscapeKey(event) {
     }
 }
 
-const modalClose = document.getElementById('modal-close');
-const modalOverlay = document.getElementById('project-modal-overlay');
+const modalClose = document.getElementById('modal_close');
+const modalOverlay = document.getElementById('project_modal_overlay');
 
 modalClose.addEventListener('click', closeProjectModal);
 modalOverlay.addEventListener('click', handleModalOverlayClick);

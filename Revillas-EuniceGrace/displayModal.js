@@ -2,7 +2,7 @@
   // Bigger "pop-up" carousel for Live Previews section
   const OVERLAY_ID = 'preview_modal_overlay';
   const OVERLAY = document.getElementById(OVERLAY_ID);
-  
+
   if (!OVERLAY) {
     return;
   }
@@ -22,16 +22,16 @@
 
   function buildSlidesFromSource(sourceCarouselId) {
     const source = document.getElementById(sourceCarouselId);
-    
+
     if (!source) {
       return [];
     }
 
     const slides = Array.from(source.querySelectorAll('.carousel-item'));
-    
+
     return slides.map(function(item) {
       const img = item.querySelector('img');
-      
+
       return {
         src: img ? img.getAttribute('src') : '',
         alt: img ? img.getAttribute('alt') : sourceCarouselId
@@ -47,13 +47,13 @@
     }
 
     const slides = buildSlidesFromSource(sourceCarouselId);
-    
+
     if (CAROUSEL_INNER) {
       CAROUSEL_INNER.innerHTML = '';
     }
 
     const title = TITLE_MAP[sourceCarouselId] || sourceCarouselId;
-    
+
     if (TITLE_EL) {
       TITLE_EL.textContent = title;
     }
@@ -61,17 +61,17 @@
     slides.forEach(function(slide, index) {
       const wrapper = document.createElement('div');
       const isActive = index === 0 ? ' active' : '';
-      
+
       wrapper.className = 'carousel-item' + isActive;
       wrapper.innerHTML = '<img src="' + slide.src + '" class="d-block w-100" alt="' + slide.alt + '">';
-      
+
       if (CAROUSEL_INNER) {
         CAROUSEL_INNER.appendChild(wrapper);
       }
     });
 
     OVERLAY.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('body-no-scroll');
 
     if (CAROUSEL_EL) {
       CAROUSEL_EL.classList.add('show');
@@ -84,7 +84,7 @@
 
   function closePreviewModal() {
     OVERLAY.classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.classList.remove('body-no-scroll');
 
     if (CAROUSEL_INNER) {
       CAROUSEL_INNER.innerHTML = '';
@@ -110,9 +110,9 @@
   function handleButtonClick(event) {
     event.preventDefault();
     event.stopPropagation();
-    
+
     const id = this.getAttribute('data-carousel');
-    
+
     if (id) {
       openPreviewModal(id);
     }
@@ -120,7 +120,7 @@
 
   function bindCarouselButtons() {
     const buttons = document.querySelectorAll('[data-carousel]');
-    
+
     buttons.forEach(function(button) {
       button.addEventListener('click', handleButtonClick);
     });

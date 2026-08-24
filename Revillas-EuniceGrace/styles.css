@@ -94,6 +94,11 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* Body no scroll - for modal overflow control */
+body.body-no-scroll {
+  overflow: hidden;
+}
+
 .accent {
   color: var(--accent);
 }
@@ -1130,8 +1135,8 @@ section {
   font-weight: 800;
 }
 
-#preview-carousel .carousel-control-prev,
-#preview-carousel .carousel-control-next {
+#preview_carousel .carousel-control-prev,
+#preview_carousel .carousel-control-next {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -1142,21 +1147,21 @@ section {
   opacity: 1;
 }
 
-#preview-carousel .carousel-control-prev {
+#preview_carousel .carousel-control-prev {
   left: 16px !important;
 }
 
-#preview-carousel .carousel-control-next {
+#preview_carousel .carousel-control-next {
   right: 16px !important;
 }
 
-#preview-carousel .carousel-control-prev-icon,
-#preview-carousel .carousel-control-next-icon {
+#preview_carousel .carousel-control-prev-icon,
+#preview_carousel .carousel-control-next-icon {
   display: none !important;
 }
 
-#preview-carousel .carousel-control-prev::after,
-#preview-carousel .carousel-control-next::after {
+#preview_carousel .carousel-control-prev::after,
+#preview_carousel .carousel-control-next::after {
   content: '';
   display: block;
   width: 0;
@@ -1165,15 +1170,15 @@ section {
   border-bottom: 6px solid transparent;
 }
 
-#preview-carousel .carousel-control-prev::after {
+#preview_carousel .carousel-control-prev::after {
   border-right: 10px solid var(--accent);
 }
 
-#preview-carousel .carousel-control-next::after {
+#preview_carousel .carousel-control-next::after {
   border-left: 10px solid var(--accent);
 }
 
-#preview-carousel .carousel-inner img {
+#preview_carousel .carousel-inner img {
   width: 100%;
   height: min(70vh, 560px);
   object-fit: contain;
@@ -1181,7 +1186,7 @@ section {
   display: block;
 }
 
-#preview-carousel .carousel-item {
+#preview_carousel .carousel-item {
   background: transparent;
 }
 
