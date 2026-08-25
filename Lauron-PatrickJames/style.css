@@ -220,7 +220,7 @@ nav {
 }
 
 nav.open {
-  max-height: 420px;
+  max-height: 480px;
   padding: 20px;
   opacity: 1;
   border-color: var(--line);
@@ -529,22 +529,49 @@ nav a:focus-visible::after {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 50px;
+  gap: 56px;
 }
 
-.about-grid p {
-  max-width: 60ch;
+.about-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-block {
+  margin-bottom: 40px;
+}
+
+.about-block:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-h {
   margin-bottom: 18px;
+  color: var(--ink-dim);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-block p {
+  max-width: 60ch;
+  margin-bottom: 16px;
   color: var(--ink-dim);
 }
 
-.about-grid p strong {
+.about-block p:last-child {
+  margin-bottom: 0;
+}
+
+.about-block p strong {
   color: var(--ink);
   font-weight: 500;
 }
 
 .edu-list {
-  margin-top: 36px;
+  margin-top: 4px;
 }
 
 .edu-item {
@@ -569,7 +596,7 @@ nav a:focus-visible::after {
 
 .edu-item .stage {
   color: var(--amber);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
 }
 
 .edu-item .school {
@@ -583,19 +610,28 @@ nav a:focus-visible::after {
   font-size: 0.8rem;
 }
 
-.skill-block {
-  margin-top: 44px;
+.edu-item .cert-gap {
+  margin-top: 14px;
 }
 
-.skill-block h2 {
-  margin-bottom: 28px;
-  font-family: "Fraunces", serif;
-  font-size: 1.7rem;
-  font-weight: 500;
+.skill-block .about-h {
+  margin-bottom: 0;
 }
 
 .skill-group {
   margin-top: 28px;
+}
+
+.skill-group:first-of-type {
+  margin-top: 22px;
+}
+
+.skill-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 .skill-group h4 {
@@ -605,6 +641,10 @@ nav a:focus-visible::after {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.skill-group-head h4 {
+  margin-bottom: 0;
 }
 
 .chip-row {
@@ -629,6 +669,16 @@ nav a:focus-visible::after {
   border-color: var(--amber);
   color: var(--amber);
   transform: translateY(-2px);
+}
+
+.chip-tag {
+  border-color: var(--amber);
+  color: var(--amber);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  padding: 4px 12px;
 }
 
 .social-row {
@@ -775,6 +825,57 @@ nav a:focus-visible::after {
 
 .experience-list {
   margin-bottom: 60px;
+}
+
+/* Testimonials */
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.testi-card {
+  padding: 28px 22px;
+  background: var(--bg);
+  transition: background 0.4s;
+}
+
+.testi-card:hover {
+  background: var(--bg-raised);
+}
+
+.testi-quote {
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid var(--amber);
+  margin-bottom: 22px;
+  color: var(--ink);
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.testi-who {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testi-name {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.testi-role {
+  color: var(--ink-dim);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Favorites */
@@ -1140,7 +1241,7 @@ footer {
 
   nav ul {
     flex-direction: row;
-    gap: 28px;
+    gap: 24px;
   }
 
   .nav-toggle {
@@ -1214,6 +1315,10 @@ footer {
     border-bottom: none;
   }
 
+  .testi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .fav-wrap {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -1244,7 +1349,7 @@ footer {
 
 @media (min-width: 1025px) {
   nav ul {
-    gap: 36px;
+    gap: 32px;
   }
 }
 
