@@ -5,36 +5,36 @@ const PROJECTS = [
         tag: "Web Design",
         desc: "A website for a computer shipping company.",
         img: "assets/1.png",
-        displayAnchor: "#PassedAway",
+        displayAnchor: "#passed_away",
         tech: ["HTML", "CSS", "Bootstrap"],
-        longDesc: "PassedAway is a fully designed website built for a computer shipping/logistics company. It features a clean layout with product listings, shipping info, and a contact form."
+        longDesc: "PassedAway is a fully designed website built for a computer shipping/logistics company."
     },
     {
         title: "KofiCompass",
         tag: "App",
         desc: "Website made for locating cafes near campus.",
         img: "assets/k1.png",
-        displayAnchor: "#KofiCompass",
+        displayAnchor: "#kofi_compass",
         tech: ["HTML", "CSS", "JavaScript", "Maps API"],
-        longDesc: "KofiCompass helps students find nearby coffee shops and cafes around the campus area. Features an interactive map and filter system for quick discovery."
+        longDesc: "KofiCompass helps students find nearby coffee shops and cafes around the campus area."
     },
     {
         title: "ItadakiMasu",
         tag: "Web Design",
         desc: "Simple website for a few Japanese Dishes.",
         img: "assets/I2.png",
-        displayAnchor: "#ItadakiMasu",
+        displayAnchor: "#itadaki_masu",
         tech: ["HTML", "CSS"],
-        longDesc: "ItadakiMasu is a beautifully styled webpage showcasing a selection of Japanese cuisine, complete with dish descriptions and appetizing imagery."
+        longDesc: "ItadakiMasu is a styled webpage showcasing a selection of Japanese cuisine."
     },
     {
         title: "Monthsary Gift",
         tag: "Personal",
         desc: "A very simple website for a monthsary gift.",
         img: "assets/m3.png",
-        displayAnchor: "#Motmot",
+        displayAnchor: "#monthsary_gift",
         tech: ["HTML", "CSS", "JavaScript"],
-        longDesc: "A personal project made as a digital monthsary gift. Features a heartfelt message, photo gallery, and a custom interactive surprise element."
+        longDesc: "A personal project made as a digital monthsary gift."
     }
 ];
 
@@ -134,78 +134,87 @@ function handleBackToTopScroll() {
 window.addEventListener('scroll', handleBackToTopScroll);
 
 // TYPING ANIMATION
-(function startTyping() {
-    const nameEl = document.getElementById('typing_name');
+// TYPING ANIMATION
+let typingIndex = 0;
+let typingIsTyping = true;
+let typingNameEl = null;
 
-    if (!nameEl) {
+const CAN_PHRASES = [
+    'build clean websites',
+    'make your frontend shine',
+    'create responsive UI',
+    'turn ideas into pages'
+];
+
+let canEl = null;
+let canPhraseIndex = 0;
+let canCharIndex = 0;
+let canIsDeleting = false;
+
+function typeName() {
+    if (!typingIsTyping || !typingNameEl) {
         return;
     }
 
     const fullText = 'Eunice Grace';
-    let index = 0;
-    let isTyping = true;
 
-    function typeName() {
-        if (!isTyping) {
+    if (typingIndex <= fullText.length) {
+        typingNameEl.innerHTML = fullText.slice(0, typingIndex) + '<span class="cursor">|</span>';
+        typingIndex++;
+        setTimeout(typeName, TYPING_SPEED);
+    }
+}
+
+function tickCan() {
+    if (!canEl) {
+        return;
+    }
+
+    const current = CAN_PHRASES[canPhraseIndex];
+
+    if (!canIsDeleting) {
+        canCharIndex++;
+        canEl.innerHTML = current.slice(0, canCharIndex) + '<span class="cursor">|</span>';
+
+        if (canCharIndex >= current.length) {
+            canIsDeleting = true;
+            setTimeout(tickCan, CAN_PAUSE_MS);
             return;
         }
 
-        if (index <= fullText.length) {
-            nameEl.innerHTML = fullText.slice(0, index) + '<span class="cursor">|</span>';
-            index++;
-            setTimeout(typeName, TYPING_SPEED);
+        setTimeout(tickCan, CAN_TYPING_SPEED);
+    } else {
+        canCharIndex--;
+        canEl.innerHTML = current.slice(0, canCharIndex) + '<span class="cursor">|</span>';
+
+        if (canCharIndex < 0) {
+            canIsDeleting = false;
+            canPhraseIndex = (canPhraseIndex + 1) % CAN_PHRASES.length;
+            setTimeout(tickCan, CAN_DELETE_PAUSE);
+            return;
         }
+
+        setTimeout(tickCan, CAN_DELETE_SPEED);
+    }
+}
+
+function initTypingAnimation() {
+    typingNameEl = document.getElementById('typing_name');
+
+    if (!typingNameEl) {
+        return;
     }
 
     typeName();
 
-    // Subtitle typing: "I can" + cycling phrases
-    const canEl = document.getElementById('typing_can');
+    canEl = document.getElementById('typing_can');
 
     if (canEl) {
-        const canPhrases = [
-            'build clean websites',
-            'make your frontend shine',
-            'create responsive UI',
-            'turn ideas into pages'
-        ];
-
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function tickCan() {
-            const current = canPhrases[phraseIndex];
-
-            if (!isDeleting) {
-                charIndex++;
-                canEl.innerHTML = current.slice(0, charIndex) + '<span class="cursor">|</span>';
-
-                if (charIndex >= current.length) {
-                    isDeleting = true;
-                    setTimeout(tickCan, CAN_PAUSE_MS);
-                    return;
-                }
-
-                setTimeout(tickCan, CAN_TYPING_SPEED);
-            } else {
-                charIndex--;
-                canEl.innerHTML = current.slice(0, charIndex) + '<span class="cursor">|</span>';
-
-                if (charIndex < 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % canPhrases.length;
-                    setTimeout(tickCan, CAN_DELETE_PAUSE);
-                    return;
-                }
-
-                setTimeout(tickCan, CAN_DELETE_SPEED);
-            }
-        }
-
         tickCan();
     }
-})();
+}
+
+initTypingAnimation();
 
 // DARK MODE TOGGLE
 function handleDarkModeToggle() {
