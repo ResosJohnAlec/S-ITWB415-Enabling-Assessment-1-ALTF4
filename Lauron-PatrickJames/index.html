@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Patrick James Lauron's personal portfolio website."
+  >
+  <title>Patrick James Lauron - Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header id="site_header">
+    <a class="brand" href="#home" aria-label="Patrick James Lauron home">
+      PATJEYMS
+    </a>
+
+    <nav id="site_nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#favorite">Favorites</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button
+      class="nav-toggle"
+      id="nav_toggle"
+      type="button"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="site_nav"
+    >
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div>
+          <h1>
+            <span>Patrick James</span>
+            <em>Lauron</em>
+          </h1>
+
+          <p class="hero-role">
+            BS Information Technology student majoring in Web Development at
+            De La Salle University - Dasmariñas — a full stack developer and
+            consistent Dean's Lister who spends as much time behind a camera
+            as behind a keyboard.
+          </p>
+        </div>
+
+        <div class="frame">
+          <img
+            class="frame-photo"
+            src="assets/pic1.jpg"
+            alt="Patrick James Lauron hero photo"
+          >
+          <div class="initials" aria-hidden="true">PJL</div>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <strong>BSIT</strong>
+          <span>web development track</span>
+        </div>
+        <div>
+          <strong>2023-27</strong>
+          <span>DLSU-D, Dean's Lister</span>
+        </div>
+        <div>
+          <strong>CICSSG</strong>
+          <span>legislative councilor</span>
+        </div>
+        <div>
+          <strong>Bacoor</strong>
+          <span>Calabarzon, PH</span>
+        </div>
+      </div>
+
+      <div class="scroll-cue mono" aria-hidden="true">
+        <div class="bar"></div>
+        <span>SCROLL</span>
+      </div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <section id="about">
+      <div class="section-label reveal">
+        <span class="idx mono">01</span>
+        <h2>About Me!</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-col reveal">
+          <div class="about-block">
+            <h3 class="about-h">Who I Am</h3>
+            <p>
+              Hi! I'm Patrick James Lauron, a
+              <strong>
+                21-year-old BS Information Technology student majoring in
+                Web Development, working as a full stack developer.
+              </strong>
+              I enjoy capturing moments through photography and expressing
+              creativity through visual storytelling.
+            </p>
+            <p>
+              Aside from photography, I love exploring coffee shops,
+              discovering scenic places, and enjoying long drives. Through
+              this page, I'd like to share a bit of what I build and what I
+              shoot.
+            </p>
+          </div>
+
+          <div class="about-block">
+            <h3 class="about-h">Education</h3>
+
+            <div class="edu-list">
+              <div class="edu-item">
+                <div class="stage mono">SHS</div>
+                <div>
+                  <div class="school">Emilio Aguinaldo College</div>
+                  <div class="note">
+                    STEM Strand · Graduated with Honors, 94 average
+                  </div>
+                </div>
+              </div>
+
+              <div class="edu-item">
+                <div class="stage mono">COLLEGE</div>
+                <div>
+                  <div class="school">
+                    De La Salle University - Dasmariñas
+                  </div>
+                  <div class="note">
+                    BS Information Technology, Web Development · 2023-2027 ·
+                    Consistent Dean's Lister
+                  </div>
+                </div>
+              </div>
+
+              <div class="edu-item">
+                <div class="stage mono">CERTS</div>
+                <div>
+                  <div class="school">
+                    TOEIC Global English Certification
+                  </div>
+                  <div class="note">
+                    Princeton Assessments and Training, Inc. (Hopkins
+                    International Partners)
+                  </div>
+
+                  <div class="cert-gap">
+                    <div class="school">
+                      Network and Cybersecurity Fundamentals
+                    </div>
+                    <div class="note">
+                      Department of Information and Communications
+                      Technology
+                    </div>
+                  </div>
+
+                  <div class="cert-gap">
+                    <div class="school">
+                      Wonders and Perils of Artificial Intelligence &amp;
+                      Emerging Technology
+                    </div>
+                    <div class="note">
+                      Department of Information and Communications
+                      Technology
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a
+              href="https://www.instagram.com/patjeyms/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              IG
+            </a>
+            <a
+              href="https://www.facebook.com/patjeyms"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              FB
+            </a>
+            <a
+              href="https://www.linkedin.com/in/patjeyms/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              LI
+            </a>
+          </div>
+        </div>
+
+        <div class="about-col reveal">
+          <div class="skill-block">
+            <h3 class="about-h">Technical Skills</h3>
+
+            <div class="skill-group">
+              <div class="skill-group-head">
+                <h4>Web Development</h4>
+                <span class="chip chip-tag">Full Stack</span>
+              </div>
+              <div class="chip-row">
+                <span class="chip">React.js</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">Node.js</span>
+                <span class="chip">Express.js</span>
+                <span class="chip">PHP</span>
+                <span class="chip">C#</span>
+                <span class="chip">.NET</span>
+                <span class="chip">Tailwind CSS</span>
+                <span class="chip">Bootstrap</span>
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Databases &amp; Version Control</h4>
+              <div class="chip-row">
+                <span class="chip">MongoDB</span>
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">MySQL</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Media &amp; Design</h4>
+              <div class="chip-row">
+                <span class="chip">Video Editing</span>
+                <span class="chip">Image Editing</span>
+                <span class="chip">Photography</span>
+                <span class="chip">Videography</span>
+                <span class="chip">Adobe Creative Suite</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Leadership &amp; Management</h4>
+              <div class="chip-row">
+                <span class="chip">Organizational Leadership</span>
+                <span class="chip">
+                  Legislative Drafting &amp; Ordinance Review
+                </span>
+                <span class="chip">Committee Management</span>
+                <span class="chip">Event Documentation Coordination</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Office &amp; Productivity Tools</h4>
+              <div class="chip-row">
+                <span class="chip">Microsoft Office Suite</span>
+                <span class="chip">Google Workspace</span>
+                <span class="chip">Trello</span>
+                <span class="chip">Asana</span>
+                <span class="chip">Slack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <section id="hobbies">
+      <div class="section-label reveal">
+        <span class="idx mono">02</span>
+        <h2>Hobbies</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="roll-grid reveal-stagger reveal">
+        <div class="roll-card">
+          <span class="frame-no mono">FRAME 01 / PHOTOGRAPHY</span>
+
+          <div class="thumbstrip">
+            <div class="thumb">
+              <img
+                src="assets/photography.jpg"
+                alt="Photography sample 1"
+              >
+            </div>
+            <div class="thumb">
+              <img
+                src="assets/photography3.jpg"
+                alt="Photography sample 2"
+              >
+            </div>
+            <div class="thumb">
+              <img
+                src="assets/photography5.png"
+                alt="Photography sample 3"
+              >
+            </div>
+          </div>
+
+          <h3>Photography</h3>
+        </div>
+
+        <div class="roll-card">
+          <span class="frame-no mono">FRAME 02 / EXPLORING</span>
+
+          <div class="thumbstrip">
+            <div class="thumb">
+              <img
+                src="assets/explore1.jpg"
+                alt="Exploring sample 1"
+              >
+            </div>
+            <div class="thumb">
+              <img
+                src="assets/explore2.jpg"
+                alt="Exploring sample 2"
+              >
+            </div>
+            <div class="thumb">
+              <img
+                src="assets/explore3.jpg"
+                alt="Exploring sample 3"
+              >
+            </div>
+          </div>
+
+          <h3>Exploring</h3>
+        </div>
+
+        <div class="roll-card">
+          <span class="frame-no mono">FRAME 03 / DRIVING</span>
+
+          <div class="thumbstrip">
+            <div class="thumb">
+              <img src="assets/driving.jpg" alt="Driving sample 1">
+            </div>
+            <div class="thumb">
+              <img src="assets/driving2.jpg" alt="Driving sample 2">
+            </div>
+            <div class="thumb">
+              <img src="assets/driving3.jpg" alt="Driving sample 3">
+            </div>
+          </div>
+
+          <h3>Driving</h3>
+        </div>
+      </div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <section id="experience">
+      <div class="section-label reveal">
+        <span class="idx mono">03</span>
+        <h2>Experiences</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="stat-strip reveal-stagger reveal">
+        <div class="stat">
+          <strong>11mo</strong>
+          <span class="mono">CICSSG TERM</span>
+        </div>
+        <div class="stat">
+          <strong>2</strong>
+          <span class="mono">CONCURRENT ROLES</span>
+        </div>
+        <div class="stat">
+          <strong>30</strong>
+          <span class="mono">LISTED SKILLS</span>
+        </div>
+        <div class="stat">
+          <strong>3</strong>
+          <span class="mono">CERTIFICATIONS</span>
+        </div>
+      </div>
+
+      <div class="edu-list experience-list reveal">
+        <div class="edu-item">
+          <div class="stage mono">AUG '25 – JUL '26</div>
+          <div>
+            <div class="school">Legislative Councilor (Former)</div>
+            <div class="note">
+              DLSU-D CICS Student Government · Drafted and reviewed
+              ordinances, oversaw college projects, and monitored compliance
+              with passed legislation.
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="stage mono">AUG '25 – JUL '26</div>
+          <div>
+            <div class="school">
+              Co-Director, Technical &amp; Media Management (Former)
+            </div>
+            <div class="note">
+              DLSU-D CICS Student Government · Captured and archived
+              photo/video across org events, curated content for promotional
+              materials, and set media backup protocols.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <section id="testimonials">
+      <div class="section-label reveal">
+        <span class="idx mono">04</span>
+        <h2>Testimonials</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="testi-grid reveal-stagger reveal">
+        <div class="testi-card">
+          <p class="testi-quote">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.          
+          </p>
+          <div class="testi-who">
+            <span class="testi-name">Name Surname</span>
+            <span class="testi-role mono">Role · Organization</span>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <p class="testi-quote">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.          
+          </p>
+          <div class="testi-who">
+            <span class="testi-name">Name Surname</span>
+            <span class="testi-role mono">Role · Organization</span>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <p class="testi-quote">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.          
+          </p>
+          <div class="testi-who">
+            <span class="testi-name">Name Surname</span>
+            <span class="testi-role mono">Role · Organization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <section id="favorite">
+      <div class="section-label reveal">
+        <span class="idx mono">05</span>
+        <h2>Now Playing</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="fav-wrap reveal">
+        <div>
+          <p>
+            Here's one of the playlists I keep on repeat while driving,
+            studying, or editing photos.
+          </p>
+
+          <div class="fav-quote">
+            "Wrecking balls and million stones. Will never took away. My
+            strongest will to say. The words you long to hear" -
+            Magnolia Celebration
+          </div>
+        </div>
+
+        <iframe
+          class="spotify-frame"
+          data-testid="embed-iframe"
+          src="https://open.spotify.com/embed/playlist/14GtzCsLNw8WkYzVHUQA6g"
+          title="Patrick James Lauron's Spotify playlist"
+          allowfullscreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <section id="contact">
+      <div class="section-label reveal">
+        <span class="idx mono">06</span>
+        <h2>Get in Touch</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p>
+            Got a project in mind, a photo to talk about, or just want to say
+            hi? My inbox is always open - I usually reply within a day or two.
+          </p>
+
+          <div class="contact-detail">
+            <a href="mailto:pjameslauron@gmail.com">
+              <span class="cd-label mono">Email</span>
+              <span class="cd-value">pjameslauron@gmail.com</span>
+            </a>
+
+            <div>
+              <span class="cd-label mono">Based in</span>
+              <span class="cd-value">Cavite, Bacoor 4102, Philippines</span>
+            </div>
+
+            <a
+              href="https://www.linkedin.com/in/patjeyms/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cd-label mono">LinkedIn</span>
+              <span class="cd-value">in/patjeyms</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contact_form">
+          <div class="field">
+            <label class="mono" for="cf_name">Name</label>
+            <input
+              type="text"
+              id="cf_name"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
+            <div class="underline"></div>
+          </div>
+
+          <div class="field">
+            <label class="mono" for="cf_email">Email</label>
+            <input
+              type="email"
+              id="cf_email"
+              name="email"
+              placeholder="you@email.com"
+              autocomplete="email"
+              required
+            >
+            <div class="underline"></div>
+          </div>
+
+          <div class="field">
+            <label class="mono" for="cf_message">Message</label>
+            <textarea
+              id="cf_message"
+              name="message"
+              rows="5"
+              placeholder="What's on your mind?"
+              required
+            ></textarea>
+            <div class="underline"></div>
+          </div>
+
+          <button class="send-btn" type="submit">
+            Send message
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+
+          <div class="form-note mono" id="form_note">
+            Opens your email client with this message pre-filled.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot-line">
+      <div>
+        Designed by <strong>Patrick James Lauron</strong>
+      </div>
+      <div>© 2026 All rights reserved</div>
+    </div>
+  </footer>
+
+  <button
+    class="to-top"
+    id="to_top"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+</body>
+</html>
