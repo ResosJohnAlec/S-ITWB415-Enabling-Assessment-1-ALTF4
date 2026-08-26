@@ -219,6 +219,31 @@ a {
   padding: 6px;
 }
 
+.testimonial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonial-item {
+  background: white;
+  border: 1px solid var(--pink-light);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.testimonial-item p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.testimonial-item .testimonial-author {
+  font-weight: 600;
+  color: var(--pink-dark);
+  font-size: 13px;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -329,5 +354,14 @@ footer {
 
   .interest-item {
     flex: 1 1 28%;
+  }
+
+  .testimonial-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .testimonial-item {
+    flex: 1 1 45%;
   }
 }
