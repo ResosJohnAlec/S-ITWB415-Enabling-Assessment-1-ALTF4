@@ -284,13 +284,12 @@ nav a:focus-visible {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background:
-    radial-gradient(
-      120% 140% at 20% 0%,
-      #2a2a2a 0%,
-      #171717 55%,
-      #0d0d0d 100%
-    );
+  background: radial-gradient(
+    120% 140% at 20% 0%,
+    #2a2a2a 0%,
+    #171717 55%,
+    #0d0d0d 100%
+  );
   transition: border-color 0.4s;
 }
 
@@ -685,17 +684,28 @@ nav a:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
+  align-items: stretch;
 }
 
 .testi-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 16px;
+  height: 100%;
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--bg-raised);
   transition: border-color 0.25s;
+}
+
+.testi-card blockquote {
+  flex: 1;
+}
+
+.testi-card figcaption {
+  margin-top: auto;
 }
 
 .testi-card:hover {
@@ -752,7 +762,7 @@ nav a:focus-visible {
 /* Laptop & above */
 @media (min-width: 769px) {
   .testi-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
