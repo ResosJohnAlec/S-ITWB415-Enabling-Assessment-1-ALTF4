@@ -265,11 +265,64 @@ body {
   box-shadow: 0 10px 25px var(--color-accent-shadow-light);
 }
 
+.testimonials {
+  width: 80%;
+  margin: auto auto 5px;
+  padding: 20px;
+}
+
+.testimonials h2 {
+  margin-bottom: 30px;
+  color: var(--color-text);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.testimonal-card {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.testimonal-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--color-accent);
+  box-shadow: 0 10px 25px var(--color-accent-shadow-light);
+}
+
+.testimonial-grid i {
+  color: var(--color-projects-icon);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.testimonials h3 {
+  font-size: 16px;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.testimonials p {
+  color: var(--color-muted-text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .fa-diagram-project {
   color: var(--color-projects-icon);
 }
 
 .fa-layer-group {
+  color: var(--color-projects-icon);
+}
+.fa-envelope {
   color: var(--color-projects-icon);
 }
 
