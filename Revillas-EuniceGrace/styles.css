@@ -1155,6 +1155,77 @@ section {
 }
 
 /* =============================================
+   TESTIMONIALS
+   ============================================= */
+.testimonials {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.testimonial-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.testimonial-quote-icon {
+  color: var(--accent);
+  font-size: 1.4rem;
+  opacity: 0.6;
+}
+
+.testimonial-text {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-author img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.testimonial-author-info h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.testimonial-author-info span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* =============================================
    CONTACT + FORM VALIDATION (requirement)
    ============================================= */
 .contact {
