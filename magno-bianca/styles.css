@@ -242,7 +242,6 @@ footer {
     }
 }
 
-/* Mobile L / Tablet */
 @media (min-width: 426px) {
     .content {
         padding: 50px 40px;
@@ -253,7 +252,6 @@ footer {
     }
 }
 
-/* Laptop and above: switch to sidebar layout */
 @media (min-width: 769px) {
     .layout {
         flex-direction: row;
